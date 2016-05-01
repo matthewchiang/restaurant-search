@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,69 +7,139 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="cosc150.restaurantsearch.MainActivity">
+    tools:context="cosc150.restaurantsearch.MainActivity"
+    android:weightSum="1">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:id="@+id/button"
+        android:layout_alignParentBottom="true" />
 
     <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="321dp"
         android:rowCount="4"
-        android:columnCount="2">
+        android:columnCount="2"
+        android:layout_above="@+id/button"
+        android:layout_alignParentTop="true">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:maxWidth="42sp"
+            android:maxHeight="42sp"
+            android:scaleType="fitCenter"
             android:id="@+id/Aztec"
-            android:src="@mipmap/ic_launcher"
+            android:src="@drawable/aztecpic"
             android:layout_row="0"
-            android:layout_column="0" />
+            android:layout_column="0"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:maxWidth="42sp"
+            android:maxHeight="42sp"
+            android:scaleType="fitCenter"
             android:id="@+id/Chinese"
-            android:src="@mipmap/ic_launcher"
+            android:src="@drawable/chinesepic"
             android:layout_row="0"
-            android:layout_column="1" />
+            android:layout_column="1"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:maxWidth="42sp"
+            android:maxHeight="42sp"
+            android:scaleType="fitCenter"
             android:id="@+id/Japanese"
-            android:src="@mipmap/ic_launcher"
+            android:src="@drawable/japanesepic"
             android:layout_row="1"
-            android:layout_column="0" />
+            android:layout_column="0"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:maxWidth="42sp"
+            android:maxHeight="42sp"
+            android:scaleType="fitCenter"
             android:id="@+id/Italian"
-            android:src="@mipmap/ic_launcher"
+            android:src="@drawable/italianpic"
             android:layout_row="1"
-            android:layout_column="1" />
+            android:layout_column="1"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:maxWidth="42sp"
+            android:maxHeight="42sp"
+            android:scaleType="fitCenter"
             android:id="@+id/French"
-            android:src="@mipmap/ic_launcher"
+            android:src="@drawable/frenchpic"
             android:layout_row="2"
-            android:layout_column="0" />
+            android:layout_column="0"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:maxWidth="42sp"
+            android:maxHeight="42sp"
+            android:scaleType="fitCenter"
             android:id="@+id/MiddleEastern"
-            android:src="@mipmap/ic_launcher"
+            android:src="@drawable/middleeastpic"
             android:layout_row="2"
-            android:layout_column="1" />
+            android:layout_column="1"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/Mexican"
-            android:src="@mipmap/ic_launcher"
-            android:layout_row="3"
-            android:layout_column="0" />
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:maxWidth="42sp"
+            android:maxHeight="42sp"
+            android:scaleType="fitCenter"
             android:id="@+id/Canadian"
-            android:src="@mipmap/ic_launcher"
+            android:src="@drawable/canadianpic"
             android:layout_row="3"
-            android:layout_column="1" />
+            android:layout_column="0"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:maxWidth="42sp"
+            android:maxHeight="42sp"
+            android:scaleType="fitCenter"
+            android:id="@+id/Mexican"
+            android:src="@drawable/mexicanpic"
+            android:layout_row="3"
+            android:layout_column="1"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1" />
+
     </GridLayout>
-</LinearLayout>
+
+</RelativeLayout>
