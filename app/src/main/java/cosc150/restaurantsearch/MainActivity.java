@@ -1,10 +1,12 @@
 package cosc150.restaurantsearch;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import java.util.Arrays;
@@ -108,5 +110,17 @@ public class MainActivity extends AppCompatActivity {
                     mexican.clearColorFilter();
             }
         });
+
+        final Button searchButton = (Button) findViewById(R.id.searchButton);
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                searchRestaurants();
+            }
+        });
+    }
+
+    public void searchRestaurants() {
+        Intent mapIntent = new Intent(this, RestaurantSearch.class);
+        startActivity(mapIntent);
     }
 }
