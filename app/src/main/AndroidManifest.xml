@@ -19,6 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".RestaurantSearch"></activity>
+        <activity android:name=".SelectedRestaurant"></activity>
     </application>
 
 </manifest>
