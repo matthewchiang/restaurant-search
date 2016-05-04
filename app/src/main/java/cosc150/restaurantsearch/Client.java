@@ -12,16 +12,19 @@ import java.io.PrintWriter;
 import java.lang.reflect.Array;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Client {
     private String hostname = "52.90.92.72";
     private int portNumber = 40001;
     private Socket connection = null;
     private ArrayList<String> toRequest;
+    private BPlusTree bPlusTreeToInsert;
 
-    Client(ArrayList<String> toRequest) throws IOException{
+    Client(ArrayList<String> toRequest, BPlusTree bPlusTreeToInsert) throws IOException{
         this.toRequest = toRequest;
-        new messaging(this.hostname, this.portNumber, toRequest);
+        this.bPlusTreeToInsert = bPlusTreeToInsert;
+        new messaging(this.hostname, this.portNumber, toRequest, bPlusTreeToInsert);
     }
 
     public void close_connection() throws IOException{
@@ -33,12 +36,14 @@ public class Client {
         int portNumber;
         Socket connectedSocket = null;
         ArrayList<String> requested;
+        BPlusTree bPlusTree;
 
         // Thread constructor
-        messaging(String ip, int port, ArrayList<String> requested){
+        messaging(String ip, int port, ArrayList<String> requested, BPlusTree bPlusTree){
             this.hostname = ip;
             this.portNumber = port;
             this.requested = requested;
+            this.bPlusTree = bPlusTree;
             start();
         }
 
@@ -68,7 +73,7 @@ public class Client {
                             int BLOCKSIZE = 1024;
                             byte[] byteSize = new byte[BLOCKSIZE];
                             // Byte stream connection from socket
-                            InputStream incoming = connection.getInputStream();
+                            InputStream incoming = connectedSocket.getInputStream();
                             // New file directory
                             ByteArrayOutputStream outputData = new ByteArrayOutputStream();
                             // Stream to extract file from byte stream
@@ -90,6 +95,18 @@ public class Client {
                                     j++;
                                 }
                                 String allData = outputData.toString();
+                                Scanner scanner = new Scanner(allData);
+                                while (scanner.hasNextLine()) {
+                                    String toInsert = scanner.nextLine();
+                                    String categoryToInsert = toInsert.substring(0, toInsert.indexOf('&'));
+                                    String nameToInsert = toInsert.substring(toInsert.indexOf('&') + 1, toInsert.lastIndexOf('&'));
+                                    String descriptionToInsert = toInsert.substring(toInsert.lastIndexOf('&'), toInsert.length() - 3);
+                                    descriptionToInsert = descriptionToInsert.trim();
+                                    double ratingToInsert = Double.valueOf(toInsert.substring(toInsert.length()-3));
+                                    bPlusTree.insert(new Restaurant(categoryToInsert, nameToInsert, descriptionToInsert, ratingToInsert));
+                                }
+                                scanner.close();
+
                             }
                             finally{
                                 output.flush();
@@ -100,12 +117,13 @@ public class Client {
                     }
 
                     // Check if message is ready to be sent.
+                    String toSend = "";
                     while(requested.size() > 0){
                         // Convert message to message protocol.
-                        String toSend = requested.get(0);//"%" + requested.get(0) + "^";
-                        out.println(toSend);
+                        toSend += requested.get(0) + '%';
                         requested.remove(0);
                     }
+                    out.println(toSend);
                 }
 
             }catch(IOException e) {
