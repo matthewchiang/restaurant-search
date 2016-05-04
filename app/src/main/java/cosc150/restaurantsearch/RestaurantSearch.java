@@ -43,13 +43,10 @@ public class RestaurantSearch extends AppCompatActivity {
         if (categoryBooleans[6]) categoriesToSearch.add("Canadian");
         if (categoryBooleans[7]) categoriesToSearch.add("Mexican");
 
-        // UNCOMMENT WHEN READY TO DO HADOOP REQUESTS
-     //   /*
         try {
             Client client = new Client(categoriesToSearch);
         } catch (IOException e) {
             e.printStackTrace();
         }
-     //   */
     }
 }

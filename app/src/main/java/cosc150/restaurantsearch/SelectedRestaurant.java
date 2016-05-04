@@ -26,23 +26,23 @@ public class SelectedRestaurant extends AppCompatActivity {
 
         String importedName = "";
         String importedDescription = "";
-        float importedRating = 0;
+        double importedRating = 0;
 
         Bundle extras = getIntent().getExtras();
         if (extras != null){
             importedName = extras.getString("restaurant_name");
             importedDescription = extras.getString("description");
-            importedRating = extras.getFloat("overall_rating");
+            importedRating = extras.getDouble("overall_rating");
         }
 
         TextView restName = (TextView) findViewById(R.id.restName);
         restName.setText(importedName);
 
         TextView description = (TextView) findViewById(R.id.description);
-        description.setText(importedDescription);
+        description.setText(importedRating+importedDescription);
 
         RatingBar restRating = (RatingBar) findViewById(R.id.ratingBar);
-        restRating.setRating(importedRating);
+        restRating.setRating((float)importedRating);
 
         Review[] restReviews = ReviewGenerator.createReviews(importedRating, reviewCount);
 
@@ -62,7 +62,7 @@ public class SelectedRestaurant extends AppCompatActivity {
                 TextView userReview = (TextView) rowView.findViewById(R.id.userReview);
 
                 Review singleReview = getItem(position);
-                userRating.setRating((float) singleReview.getUserRating());
+                userRating.setRating((float)singleReview.getUserRating());
                 userReview.setText(singleReview.getUserReview());
 
                 return rowView;
