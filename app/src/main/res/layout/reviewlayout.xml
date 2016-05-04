@@ -6,6 +6,7 @@
     <RatingBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:style="?android:attr/ratingBarStyleSmall"
         android:id="@+id/userRating"
         android:clickable="false"
         android:isIndicator="true"

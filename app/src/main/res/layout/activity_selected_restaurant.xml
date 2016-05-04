@@ -28,7 +28,9 @@
         tools:listitem="@android:layout/simple_expandable_list_item_2"
         android:touchscreenBlocksFocus="false"
         android:smoothScrollbar="false"
-        android:layout_below="@+id/ratingBar"
+        android:background="#bfe5e5"
+        android:fastScrollEnabled="false"
+        android:layout_below="@+id/textView2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_above="@+id/button" />
@@ -71,6 +73,16 @@
         android:onClick="goToMap"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="User reviews:"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/overallRating"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 </RelativeLayout>
