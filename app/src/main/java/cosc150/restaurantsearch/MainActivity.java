@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
@@ -114,13 +115,15 @@ public class MainActivity extends AppCompatActivity {
         final Button searchButton = (Button) findViewById(R.id.searchButton);
         searchButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                searchRestaurants();
+                switchToRestaurantSearch();
             }
         });
     }
 
-    public void searchRestaurants() {
-        Intent mapIntent = new Intent(this, RestaurantSearch.class);
-        startActivity(mapIntent);
+    public void switchToRestaurantSearch() {
+        Intent restaurantSearchIntent = new Intent(this, RestaurantSearch.class);
+        restaurantSearchIntent.putExtra("selected", selected);
+
+        startActivity(restaurantSearchIntent);
     }
 }

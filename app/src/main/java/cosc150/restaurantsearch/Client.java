@@ -3,20 +3,25 @@ package cosc150.restaurantsearch;
 
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.lang.reflect.Array;
 import java.net.Socket;
+import java.util.ArrayList;
 
 public class Client {
     private String hostname = "52.90.92.72";
     private int portNumber = 40001;
     private Socket connection = null;
+    private ArrayList<String> toRequest;
 
-    Client() throws IOException{
-        new messaging(this.hostname,this.portNumber);
+    Client(ArrayList<String> toRequest) throws IOException{
+        this.toRequest = toRequest;
+        new messaging(this.hostname, this.portNumber, toRequest);
     }
 
     public void close_connection() throws IOException{
@@ -27,11 +32,13 @@ public class Client {
         String hostname;
         int portNumber;
         Socket connectedSocket = null;
+        ArrayList<String> requested;
 
         // Thread constructor
-        messaging(String ip, int port){
+        messaging(String ip, int port, ArrayList<String> requested){
             this.hostname = ip;
             this.portNumber = port;
+            this.requested = requested;
             start();
         }
 
@@ -63,9 +70,9 @@ public class Client {
                             // Byte stream connection from socket
                             InputStream incoming = connection.getInputStream();
                             // New file directory
-                            FileOutputStream getFile = new FileOutputStream("this should the file destination");
+                            ByteArrayOutputStream outputData = new ByteArrayOutputStream();
                             // Stream to extract file from byte stream
-                            BufferedOutputStream output = new BufferedOutputStream(getFile);
+                            BufferedOutputStream output = new BufferedOutputStream(outputData);
 
                             try{
                                 int i = BLOCKSIZE, j = 0;
@@ -82,6 +89,7 @@ public class Client {
                                     output.write(byteSize, 0, 1);
                                     j++;
                                 }
+                                String allData = outputData.toString();
                             }
                             finally{
                                 output.flush();
@@ -91,19 +99,13 @@ public class Client {
 
                     }
 
-                    /* This should be modified to be called when a button is pressed for
-                        search. It should just send a string.
                     // Check if message is ready to be sent.
-                    if(driverProgram.messageToSend != ""){
+                    while(requested.size() > 0){
                         // Convert message to message protocol.
-                        String toSend = driverProgram.name;
-                        while(toSend.length() < 20)
-                            toSend = toSend + '%';
-                        toSend = toSend + driverProgram.messageToSend;
+                        String toSend = requested.get(0);//"%" + requested.get(0) + "^";
                         out.println(toSend);
-                        driverProgram.messageToSend = "";
+                        requested.remove(0);
                     }
-                    */
                 }
 
             }catch(IOException e) {
