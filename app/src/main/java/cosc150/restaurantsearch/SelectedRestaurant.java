@@ -24,11 +24,25 @@ public class SelectedRestaurant extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selected_restaurant);
 
+        String importedName = "";
+        String importedDescription = "";
+        float importedRating = 0;
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null){
+            importedName = extras.getString("restaurant_name");
+            importedDescription = extras.getString("description");
+            importedRating = extras.getFloat("overall_rating");
+        }
+
         TextView restName = (TextView) findViewById(R.id.restName);
         restName.setText(importedName);
 
         TextView description = (TextView) findViewById(R.id.description);
         description.setText(importedDescription);
+
+        RatingBar restRating = (RatingBar) findViewById(R.id.ratingBar);
+        restRating.setRating(importedRating);
 
         Review[] restReviews = ReviewGenerator.createReviews(importedRating, reviewCount);
 
