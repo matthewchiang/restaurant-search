@@ -15,6 +15,7 @@ public class RestaurantSearch extends AppCompatActivity {
 
     boolean[] categoryBooleans;
     ArrayList<String> categoriesToSearch = new ArrayList<String>();
+    BPlusTree allRestaurants = new BPlusTree(6);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +45,7 @@ public class RestaurantSearch extends AppCompatActivity {
         if (categoryBooleans[7]) categoriesToSearch.add("Mexican");
 
         try {
-            Client client = new Client(categoriesToSearch);
+            Client client = new Client(categoriesToSearch, allRestaurants);
         } catch (IOException e) {
             e.printStackTrace();
         }
