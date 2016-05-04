@@ -69,7 +69,7 @@ public class SelectedRestaurant extends AppCompatActivity {
             }
         }
 
-        ExpandableListView lv = (ExpandableListView) findViewById(R.id.expandableListView);
+        ListView lv = (ListView) findViewById(R.id.ListView);
         reviewAdapter adapter = new reviewAdapter(this, restReviews);
         lv.setAdapter(adapter);
     }

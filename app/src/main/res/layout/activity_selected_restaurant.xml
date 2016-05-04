@@ -21,10 +21,10 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
-    <ExpandableListView
+    <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/expandableListView"
+        android:id="@+id/ListView"
         tools:listitem="@android:layout/simple_expandable_list_item_2"
         android:touchscreenBlocksFocus="false"
         android:smoothScrollbar="false"
@@ -54,7 +54,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:padding="2dp"
-        android:layout_below="@+id/textView2"
+        android:layout_below="@+id/description"
         android:clickable="false"
         android:isIndicator="true"
         android:numStars="5"
