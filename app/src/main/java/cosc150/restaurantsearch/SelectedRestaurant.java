@@ -39,9 +39,9 @@ public class SelectedRestaurant extends AppCompatActivity {
         restName.setText(importedName);
 
         TextView description = (TextView) findViewById(R.id.description);
-        description.setText(importedRating+importedDescription);
+        description.setText(importedDescription);
 
-        RatingBar restRating = (RatingBar) findViewById(R.id.ratingBar);
+        RatingBar restRating = (RatingBar) findViewById(R.id.overallRating);
         restRating.setRating((float)importedRating);
 
         Review[] restReviews = ReviewGenerator.createReviews(importedRating, reviewCount);

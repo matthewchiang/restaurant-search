@@ -50,7 +50,7 @@
     <RatingBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/ratingBar"
+        android:id="@+id/overallRating"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:padding="2dp"
@@ -58,7 +58,6 @@
         android:clickable="false"
         android:isIndicator="true"
         android:numStars="5"
-        android:rating="3.5"
         android:progressTint="#f3c317"
         android:secondaryProgressTint="#dbac01" />
 
