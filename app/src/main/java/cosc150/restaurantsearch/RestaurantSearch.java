@@ -21,10 +21,15 @@ public class RestaurantSearch extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant_search);
 
-        final Button requestButton = (Button)findViewById(R.id.request);
-        requestButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                switchToSelectedRestaurant();
+        Button request = (Button) findViewById(R.id.request);
+        request.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick (View view){
+                Intent select = new Intent(view.getContext(), SelectedRestaurant.class);
+                select.putExtra("restaurant_name", "Chicoli");
+                select.putExtra("description", "We raise all our ingredients irresponsibly!");
+                select.putExtra("overall_rating", 1.5);
+                startActivityForResult(select, 0);
             }
         });
 
@@ -47,10 +52,4 @@ public class RestaurantSearch extends AppCompatActivity {
         }
      //   */
     }
-
-    public void switchToSelectedRestaurant() {
-        Intent selectedRestaurantIntent = new Intent(this, RestaurantSearch.class);
-        startActivity(selectedRestaurantIntent);
-    }
-
 }
