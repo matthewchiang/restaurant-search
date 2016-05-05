@@ -96,7 +96,7 @@ public class BPlusTree {
         // Iterate through LNodes, from left to right, storing restaurants.
         while (toIterate != null) {
             for (int i = 0; i < toIterate.keys.size(); i++) {
-                toReturn.add(toIterate.keys.get(i));
+                toReturn.add(0, toIterate.keys.get(i));
             }
             toIterate = ((LNode)toIterate).next;
         }

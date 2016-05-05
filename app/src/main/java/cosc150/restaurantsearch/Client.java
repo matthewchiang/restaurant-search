@@ -18,15 +18,11 @@ public class Client {
     private String hostname = "52.90.92.72";
     private int portNumber = 40001;
     private Socket connection = null;
-    private ArrayList<String> toRequest;
-    private BPlusTree bPlusTreeToInsert;
-    private Boolean inputIsDone;
+    private RestaurantSearch restaurantSearch;
 
-    Client(ArrayList<String> toRequest, BPlusTree bPlusTreeToInsert, Boolean inputIsDone) throws IOException{
-        this.toRequest = toRequest;
-        this.bPlusTreeToInsert = bPlusTreeToInsert;
-        this.inputIsDone = inputIsDone;
-        new messaging(this.hostname, this.portNumber, toRequest, bPlusTreeToInsert, inputIsDone);
+    Client(RestaurantSearch restaurantSearch) throws IOException{
+        this.restaurantSearch = restaurantSearch;
+        new messaging(this.hostname, this.portNumber, restaurantSearch);
     }
 
     public void close_connection() throws IOException{
@@ -37,17 +33,13 @@ public class Client {
         String hostname;
         int portNumber;
         Socket connectedSocket = null;
-        ArrayList<String> requested;
-        BPlusTree bPlusTree;
-        Boolean ready;
+        RestaurantSearch restaurantSearch;
 
         // Thread constructor
-        messaging(String ip, int port, ArrayList<String> requested, BPlusTree bPlusTree, Boolean ready){
+        messaging(String ip, int port, RestaurantSearch restaurantSearch){
             this.hostname = ip;
             this.portNumber = port;
-            this.requested = requested;
-            this.bPlusTree = bPlusTree;
-            this.ready = ready;
+            this.restaurantSearch = restaurantSearch;
             start();
         }
 
@@ -69,6 +61,7 @@ public class Client {
 
                         // Check if file is incoming.
                         if(message.charAt(0) == '$'){
+                            System.out.println("Recieved message!");
                             // Parse message and begin recieving file.
                             message = message.substring(1);
                             int fileSize = Integer.parseInt(message.substring(0, message.indexOf('$')));
@@ -112,15 +105,18 @@ public class Client {
                                         String descriptionToInsert = toInsert.substring(toInsert.lastIndexOf('@') + 1, toInsert.length() - 3);
                                         descriptionToInsert = descriptionToInsert.trim();
                                         double ratingToInsert = Double.valueOf(toInsert.substring(toInsert.length() - 3));
-                                        bPlusTree.insert(new Restaurant(categoryToInsert, nameToInsert, descriptionToInsert, ratingToInsert));
+                                        restaurantSearch.allRestaurants.insert(new Restaurant(categoryToInsert, nameToInsert, descriptionToInsert, ratingToInsert));
                                     } catch (NumberFormatException e){
+                                        failed++;
+                                        System.out.println("Failed input row: " + failed);
+                                    } catch (StringIndexOutOfBoundsException e){
                                         failed++;
                                         System.out.println("Failed input row: " + failed);
                                     }
                                 }
-                                ready = true;
+                                restaurantSearch.readyToDisplay = new Boolean(true);
                                 scanner.close();
-
+                                System.out.println("Exiting message receive!");
                             }
                             finally{
                                 output.flush();
@@ -133,10 +129,10 @@ public class Client {
                     // Check if message is ready to be sent.
                     String toSend = "";
                     boolean requestReady = false;
-                    while(requested.size() > 0){
+                    while(restaurantSearch.categoriesToSearch.size() > 0){
                         // Convert message to message protocol.
-                        toSend += requested.get(0) + '%';
-                        requested.remove(0);
+                        toSend += restaurantSearch.categoriesToSearch.get(0) + '%';
+                        restaurantSearch.categoriesToSearch.remove(0);
                         requestReady = true;
                     }
                     if (requestReady) {

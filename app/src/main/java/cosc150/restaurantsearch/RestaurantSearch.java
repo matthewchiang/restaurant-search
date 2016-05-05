@@ -48,10 +48,10 @@ public class RestaurantSearch extends AppCompatActivity {
         if (categoryBooleans[7]) categoriesToSearch.add("Mexican");
 
         try {
-            Client client = new Client(categoriesToSearch, allRestaurants, readyToDisplay);
+            Client client = new Client(this);
 
-            while (!readyToDisplay) continue;
-
+            while (readyToDisplay.equals(new Boolean(false)));
+            //Thread.sleep(10000);
             ArrayList<Restaurant> restaurantList = allRestaurants.getRestaurants();
             System.out.println("SIZE: " + restaurantList.size());
 
