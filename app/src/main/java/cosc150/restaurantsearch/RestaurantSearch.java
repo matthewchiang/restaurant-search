@@ -18,6 +18,7 @@ public class RestaurantSearch extends AppCompatActivity {
     boolean[] categoryBooleans;
     ArrayList<String> categoriesToSearch = new ArrayList<String>();
     BPlusTree allRestaurants = new BPlusTree(6);
+    Boolean readyToDisplay = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +48,10 @@ public class RestaurantSearch extends AppCompatActivity {
         if (categoryBooleans[7]) categoriesToSearch.add("Mexican");
 
         try {
-            Client client = new Client(categoriesToSearch, allRestaurants);
-            Thread.sleep(10000);
+            Client client = new Client(categoriesToSearch, allRestaurants, readyToDisplay);
+
+            while (!readyToDisplay) continue;
+
             ArrayList<Restaurant> restaurantList = allRestaurants.getRestaurants();
             System.out.println("SIZE: " + restaurantList.size());
 
@@ -67,8 +70,6 @@ public class RestaurantSearch extends AppCompatActivity {
             }
 
         } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }

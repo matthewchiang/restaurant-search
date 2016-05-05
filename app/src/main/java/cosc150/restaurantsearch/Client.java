@@ -20,11 +20,13 @@ public class Client {
     private Socket connection = null;
     private ArrayList<String> toRequest;
     private BPlusTree bPlusTreeToInsert;
+    private Boolean inputIsDone;
 
-    Client(ArrayList<String> toRequest, BPlusTree bPlusTreeToInsert) throws IOException{
+    Client(ArrayList<String> toRequest, BPlusTree bPlusTreeToInsert, Boolean inputIsDone) throws IOException{
         this.toRequest = toRequest;
         this.bPlusTreeToInsert = bPlusTreeToInsert;
-        new messaging(this.hostname, this.portNumber, toRequest, bPlusTreeToInsert);
+        this.inputIsDone = inputIsDone;
+        new messaging(this.hostname, this.portNumber, toRequest, bPlusTreeToInsert, inputIsDone);
     }
 
     public void close_connection() throws IOException{
@@ -37,13 +39,15 @@ public class Client {
         Socket connectedSocket = null;
         ArrayList<String> requested;
         BPlusTree bPlusTree;
+        Boolean ready;
 
         // Thread constructor
-        messaging(String ip, int port, ArrayList<String> requested, BPlusTree bPlusTree){
+        messaging(String ip, int port, ArrayList<String> requested, BPlusTree bPlusTree, Boolean ready){
             this.hostname = ip;
             this.portNumber = port;
             this.requested = requested;
             this.bPlusTree = bPlusTree;
+            this.ready = ready;
             start();
         }
 
@@ -114,6 +118,7 @@ public class Client {
                                         System.out.println("Failed input row: " + failed);
                                     }
                                 }
+                                ready = true;
                                 scanner.close();
 
                             }
