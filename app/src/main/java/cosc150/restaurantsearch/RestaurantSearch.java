@@ -24,6 +24,7 @@ public class RestaurantSearch extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant_search);
 
+        /*
         Button request = (Button) findViewById(R.id.request);
         request.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -35,6 +36,7 @@ public class RestaurantSearch extends AppCompatActivity {
                 startActivityForResult(select, 0);
             }
         });
+        */
 
         categoryBooleans = getIntent().getBooleanArrayExtra("selected");
         if (categoryBooleans[0]) categoriesToSearch.add("Aztec");
@@ -54,13 +56,26 @@ public class RestaurantSearch extends AppCompatActivity {
 
             LinearLayout linearLayout1 = (LinearLayout) findViewById(R.id.linearLayout1);
 
+
             for (Restaurant toAdd : restaurantList) {
                 String cat = toAdd.restaurantCategory;
-                String name = toAdd.restaurantName;
-                String descr = toAdd.restaurantDescription;
-                double rat = toAdd.restaurantRating;
+                final String name = toAdd.restaurantName;
+                final String descr = toAdd.restaurantDescription;
+                final double rat = toAdd.restaurantRating;
 
                 TextView text = new TextView(this);
+
+                text.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v){
+                        Intent select = new Intent(v.getContext(), SelectedRestaurant.class);
+                        select.putExtra("restaurant_name", name);
+                        select.putExtra("description", descr);
+                        select.putExtra("overall_rating",rat);
+                        startActivityForResult(select, 0);
+                    }
+                });
+
                 text.setText(cat + name + descr + rat);
                 text.setTextSize(20);
                 linearLayout1.addView(text);
