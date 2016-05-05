@@ -3,6 +3,7 @@ package cosc150.restaurantsearch;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -79,7 +80,7 @@ public class RestaurantSearch extends AppCompatActivity {
                     }
                 });
 
-                text.setText(cat + name + descr + rat);
+                text.setText(Html.fromHtml("<sup>"+cat+"</sup>"+" "+ name +" "+ "<small>"+descr+"</small>" +" "+ "<bold>"+rat+"</bold>"));
                 text.setTextSize(20);
                 linearLayout1.addView(text);
             }
