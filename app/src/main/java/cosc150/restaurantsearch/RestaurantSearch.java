@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -46,6 +48,30 @@ public class RestaurantSearch extends AppCompatActivity {
 
         try {
             Client client = new Client(categoriesToSearch, allRestaurants);
+            ArrayList<Node> nodeList = new ArrayList<Node>();
+
+            Restaurant test = new Restaurant("Mexican", "JoesRest", "Best rest", 4.3);
+
+            LinearLayout linearLayout1 = (LinearLayout) findViewById(R.id.linearLayout1);
+
+            //for (Node n : nodeList) {
+            for (int i = 0; i < 40; i++) {
+
+                String cat = test.restaurantCategory;
+                String name = test.restaurantName;
+                String descr = test.restaurantDescription;
+                double rat = test.restaurantRating;
+
+                TextView text = new TextView(this);
+                text.setText(cat + name + descr + rat);
+                text.setTextSize(20);
+                linearLayout1.addView(text);
+            }
+            //Node
+            //while ()
+            //allRestaurants.find();
+
+
         } catch (IOException e) {
             e.printStackTrace();
         }
