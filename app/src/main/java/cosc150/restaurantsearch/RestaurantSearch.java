@@ -3,6 +3,7 @@ package cosc150.restaurantsearch;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.format.Time;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -12,6 +13,9 @@ import android.widget.TextView;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.Timer;
 
 public class RestaurantSearch extends AppCompatActivity {
 
@@ -45,15 +49,16 @@ public class RestaurantSearch extends AppCompatActivity {
         if (categoryBooleans[2]) categoriesToSearch.add("Japanese");
         if (categoryBooleans[3]) categoriesToSearch.add("Italian");
         if (categoryBooleans[4]) categoriesToSearch.add("French");
-        if (categoryBooleans[5]) categoriesToSearch.add("MiddleEastern");
+        if (categoryBooleans[5]) categoriesToSearch.add("Middle Eastern");
         if (categoryBooleans[6]) categoriesToSearch.add("Canadian");
         if (categoryBooleans[7]) categoriesToSearch.add("Mexican");
 
         try {
             Client client = new Client(this);
 
-            while (readyToDisplay.equals(new Boolean(false)));
-            //Thread.sleep(10000);
+            long startTime = System.currentTimeMillis();
+            while (readyToDisplay.equals(new Boolean(false)) && System.currentTimeMillis() - startTime < 10000);
+
             ArrayList<Restaurant> restaurantList = allRestaurants.getRestaurants();
             System.out.println("SIZE: " + restaurantList.size());
 
