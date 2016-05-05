@@ -98,15 +98,21 @@ public class Client {
                                 String allData = outputData.toString();
                                 System.out.print(allData);
                                 Scanner scanner = new Scanner(allData);
-
+                                int failed = 0;
                                 while (scanner.hasNextLine()) {
-                                    String toInsert = scanner.nextLine();
-                                    String categoryToInsert = toInsert.substring(0, toInsert.indexOf('@'));
-                                    String nameToInsert = toInsert.substring(toInsert.indexOf('@') + 1, toInsert.lastIndexOf('@'));
-                                    String descriptionToInsert = toInsert.substring(toInsert.lastIndexOf('@'), toInsert.length() - 3);
-                                    descriptionToInsert = descriptionToInsert.trim();
-                                    double ratingToInsert = Double.valueOf(toInsert.substring(toInsert.length()-3));
-                                    bPlusTree.insert(new Restaurant(categoryToInsert, nameToInsert, descriptionToInsert, ratingToInsert));
+                                    try {
+                                        String toInsert = scanner.nextLine();
+                                        //System.out.print(toInsert);
+                                        String categoryToInsert = toInsert.substring(0, toInsert.indexOf('@'));
+                                        String nameToInsert = toInsert.substring(toInsert.indexOf('@') + 1, toInsert.lastIndexOf('@'));
+                                        String descriptionToInsert = toInsert.substring(toInsert.lastIndexOf('@') + 1, toInsert.length() - 3);
+                                        descriptionToInsert = descriptionToInsert.trim();
+                                        double ratingToInsert = Double.valueOf(toInsert.substring(toInsert.length() - 3));
+                                        bPlusTree.insert(new Restaurant(categoryToInsert, nameToInsert, descriptionToInsert, ratingToInsert));
+                                    } catch (NumberFormatException e){
+                                        failed++;
+                                        System.out.println("Failed input row: " + failed);
+                                    }
                                 }
                                 scanner.close();
 
