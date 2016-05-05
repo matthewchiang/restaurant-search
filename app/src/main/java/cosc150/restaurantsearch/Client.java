@@ -94,13 +94,16 @@ public class Client {
                                     output.write(byteSize, 0, 1);
                                     j++;
                                 }
+
                                 String allData = outputData.toString();
+                                System.out.print(allData);
                                 Scanner scanner = new Scanner(allData);
+
                                 while (scanner.hasNextLine()) {
                                     String toInsert = scanner.nextLine();
-                                    String categoryToInsert = toInsert.substring(0, toInsert.indexOf('&'));
-                                    String nameToInsert = toInsert.substring(toInsert.indexOf('&') + 1, toInsert.lastIndexOf('&'));
-                                    String descriptionToInsert = toInsert.substring(toInsert.lastIndexOf('&'), toInsert.length() - 3);
+                                    String categoryToInsert = toInsert.substring(0, toInsert.indexOf('@'));
+                                    String nameToInsert = toInsert.substring(toInsert.indexOf('@') + 1, toInsert.lastIndexOf('@'));
+                                    String descriptionToInsert = toInsert.substring(toInsert.lastIndexOf('@'), toInsert.length() - 3);
                                     descriptionToInsert = descriptionToInsert.trim();
                                     double ratingToInsert = Double.valueOf(toInsert.substring(toInsert.length()-3));
                                     bPlusTree.insert(new Restaurant(categoryToInsert, nameToInsert, descriptionToInsert, ratingToInsert));
@@ -118,12 +121,17 @@ public class Client {
 
                     // Check if message is ready to be sent.
                     String toSend = "";
+                    boolean requestReady = false;
                     while(requested.size() > 0){
                         // Convert message to message protocol.
                         toSend += requested.get(0) + '%';
                         requested.remove(0);
+                        requestReady = true;
                     }
-                    out.println(toSend);
+                    if (requestReady) {
+                        out.println(toSend);
+                        requestReady = false;
+                    }
                 }
 
             }catch(IOException e) {

@@ -86,4 +86,21 @@ public class BPlusTree {
         System.out.println("\nCount: " + count);
     }
 
+    public ArrayList<Restaurant> getRestaurants(){
+        Node toIterate = root;
+        while (toIterate instanceof INode){
+            toIterate = ((INode)toIterate).children.get(0);
+        }
+
+        ArrayList<Restaurant> toReturn = new ArrayList<Restaurant>();
+        // Iterate through LNodes, from left to right, storing restaurants.
+        while (toIterate != null) {
+            for (int i = 0; i < toIterate.keys.size(); i++) {
+                toReturn.add(toIterate.keys.get(i));
+            }
+            toIterate = ((LNode)toIterate).next;
+        }
+        return toReturn;
+    }
+
 }
