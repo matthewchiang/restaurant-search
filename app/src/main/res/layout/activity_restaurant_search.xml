@@ -11,33 +11,14 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="cosc150.restaurantsearch.RestaurantSearch">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="0.6"
-        android:fillViewport="false">
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/linearLayout1">
-        </LinearLayout>
-
-    </ScrollView>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="52dp">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="do it"
-            android:id="@+id/request"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true" />
-
-    </RelativeLayout>
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 
 </LinearLayout>

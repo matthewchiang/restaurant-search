@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="180px"
+        android:layout_height="180px"
+        android:layout_margin="10px"
+        android:src="@drawable/aztec"
+        android:id="@+id/restImage"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/restName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="restName"
+        android:gravity="right"
+        android:layout_weight="1"
+        android:layout_alignTop="@+id/textView3"
+        android:layout_toRightOf="@+id/textView3"
+        android:layout_toEndOf="@+id/textView3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/restDescription"
+        android:text="restDescription"
+        android:gravity="right"
+        android:layout_weight="1"
+        android:layout_below="@+id/restName"
+        android:layout_toRightOf="@+id/textView4"
+        android:layout_toEndOf="@+id/textView4" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name: "
+        android:id="@+id/textView3"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_alignTop="@+id/restImage"
+        android:layout_toRightOf="@+id/restImage"
+        android:layout_toEndOf="@+id/restImage" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description: "
+        android:id="@+id/textView4"
+        android:layout_alignTop="@+id/restDescription"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rating: "
+        android:id="@+id/textView5"
+        android:layout_below="@+id/textView4"
+        android:layout_toLeftOf="@+id/restName"
+        android:layout_toStartOf="@+id/restName" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/restRating"
+        android:text="restRating"
+        android:gravity="right"
+        android:layout_weight="1"
+        android:layout_below="@+id/restDescription"
+        android:layout_toRightOf="@+id/textView5"
+        android:layout_toEndOf="@+id/textView5" />
+
+</RelativeLayout>

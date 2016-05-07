@@ -56,9 +56,21 @@ public class RestaurantSearch extends AppCompatActivity {
             Client client = new Client(this);
 
             long startTime = System.currentTimeMillis();
-            while (readyToDisplay.equals(new Boolean(false)) && System.currentTimeMillis() - startTime < 10000);
+            while (readyToDisplay.equals(new Boolean(false))
+                    && System.currentTimeMillis() - startTime < 20000
+                    );
 
             ArrayList<Restaurant> restaurantList = allRestaurants.getRestaurants();
+
+            ResAdapter myAdapter = new ResAdapter(
+                    this,
+                    R.layout.restaurantlayout,
+                    restaurantList
+            );
+            ListView listView = (ListView) findViewById(R.id.listView);
+            listView.setAdapter(myAdapter);
+
+            /*
             System.out.println("SIZE: " + restaurantList.size());
 
             LinearLayout linearLayout1 = (LinearLayout) findViewById(R.id.linearLayout1);
@@ -87,7 +99,7 @@ public class RestaurantSearch extends AppCompatActivity {
                 text.setTextSize(20);
                 linearLayout1.addView(text);
             }
-
+            */
         } catch (IOException e) {
             e.printStackTrace();
         }
