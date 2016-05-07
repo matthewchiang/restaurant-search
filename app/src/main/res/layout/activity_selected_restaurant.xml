@@ -7,7 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="cosc150.restaurantsearch.SelectedRestaurant">
+    tools:context="cosc150.restaurantsearch.SelectedRestaurant"
+    android:background="#bfe5e5">
 
     <TextView
         android:layout_width="wrap_content"
@@ -19,7 +20,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:textColor="@color/orange"/>
 
     <ListView
         android:layout_width="wrap_content"
@@ -33,7 +35,8 @@
         android:layout_below="@+id/textView2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_above="@+id/button" />
+        android:layout_above="@+id/button"
+        android:textColor="@color/orange"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -47,7 +50,8 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp" />
+        android:layout_marginBottom="5dp"
+        android:textColor="@color/orange"/>
 
     <RatingBar
         android:layout_width="wrap_content"
@@ -74,7 +78,8 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:background="@color/orange"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -84,5 +89,6 @@
         android:id="@+id/textView2"
         android:layout_below="@+id/overallRating"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="@color/orange"/>
 </RelativeLayout>
