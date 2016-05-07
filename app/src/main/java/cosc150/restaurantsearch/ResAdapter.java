@@ -3,6 +3,7 @@ package cosc150.restaurantsearch;
 import android.app.Activity;
 import android.content.ClipData;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ public class ResAdapter extends ArrayAdapter<Restaurant>{
     private int resource;
     private ArrayList<Restaurant> restaurantList;
 
+
     public ResAdapter(Context context, int resource, ArrayList<Restaurant> restaurantList) {
         super(context, resource, restaurantList);
 
@@ -26,10 +28,12 @@ public class ResAdapter extends ArrayAdapter<Restaurant>{
         this.restaurantList = restaurantList;
     }
 
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        View row = convertView;
         LayoutInflater inflater= ((Activity)context).getLayoutInflater();
-        View row = inflater.inflate(resource, parent, false);
+        row = inflater.inflate(resource, parent, false);
         TextView restaurantName = (TextView)row.findViewById(R.id.restName);
         TextView restaurantDescription = (TextView)row.findViewById(R.id.restDescription);
         TextView restaurantRating = (TextView)row.findViewById(R.id.restRating);
@@ -37,7 +41,11 @@ public class ResAdapter extends ArrayAdapter<Restaurant>{
 
         restaurantName.setText(restaurantList.get(position).restaurantName);
         restaurantDescription.setText(restaurantList.get(position).restaurantDescription);
+        restaurantDescription.setTextSize(8);
         restaurantRating.setText(Double.toString(restaurantList.get(position).restaurantRating));
+        restaurantRating.setTextSize(10);
+
+        final Restaurant pos = restaurantList.get(position);
 
         switch (restaurantList.get(position).restaurantCategory.toLowerCase()){
             case "aztec":
@@ -65,6 +73,17 @@ public class ResAdapter extends ArrayAdapter<Restaurant>{
                 restaurantImage.setImageResource(R.drawable.mexican);
                 break;
         }
+
+        row.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent select = new Intent(view.getContext(), SelectedRestaurant.class);
+                select.putExtra("restaurant_name", pos.restaurantName);
+                select.putExtra("description", pos.restaurantDescription);
+                select.putExtra("overall_rating", pos.restaurantRating);
+                view.getContext().startActivity(select);
+            }
+        });
 
         return row;
     }
