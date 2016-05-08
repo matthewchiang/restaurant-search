@@ -3,4 +3,5 @@
     <color name="blue">#000000</color>
     <color name="orange">#e79835</color>
     <color name="silver">#696969</color>
+    <string name="title_activity_maps">Restaurant Location</string>
 </resources>
