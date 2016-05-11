@@ -10,6 +10,8 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.Random;
+
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
@@ -27,8 +29,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        Random random = new Random();
+        Double latitude = (random.nextDouble() * 7.7) + 33.3;
+        Double longitude = -(random.nextDouble() * 33.2) - 84.3;
 
-        LatLng restaurantLocation = new LatLng(38.99617, 125.9256);
+        LatLng restaurantLocation = new LatLng(latitude, longitude);
         mMap.addMarker(new MarkerOptions().position(restaurantLocation).title("Restaurant Location"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(restaurantLocation, new Float(12.0)));
     }
