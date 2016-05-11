@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="8a034dd16c0dfd75fe86c52c2cd581592acc684a">
+        <dex dex="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.3.0_39e54e763ff4cf883ac625939f852d7871fb167f\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appinvite\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="9fe026fb4c7fce21bc5142f6e1bdf844f28061ac">
+        <dex dex="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-appinvite-8.4.0_ecd11afa32d6956e202e3ce838e058049d7599d3\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="9cad249cf62751a323d9af568caf12284b7d6062">
+        <dex dex="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-nearby-8.4.0_5f93d8548fd05e188eb9590917ff10870c96ca7e\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="23be6993826b8fd88bbc8d14928bb3b8960d3d4e">
+        <dex dex="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.3.0_f2a542bfd9474ddd005b36cd70af8587e0361de4\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="1c9f35e952b212c843f7bd2c7eec8e82ad95602e">
+        <dex dex="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-analytics-8.4.0_5a02dc9b4733c32caab2488bbdc150fe39c829c9\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="0194a7409c40de94fb539d4ad9928ec5d47afeb7">
+        <dex dex="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-safetynet-8.4.0_81fe2a7cac4e006601a70ac6fc90f4bd05766adc\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="b36f30ac5ee5d5214f4b1e2ac49f11889d58e71a">
+        <dex dex="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-drive-8.4.0_1008ff691a36b0cb100d01043072346fce497c68\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="e167a34eaca0b31704212f43f9576ea84e05046f">
+        <dex dex="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-wearable-8.4.0_d42ad87e5f56e97cc057f4877768e97e01e26c17\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="2d7fe76982677315c4dc4edfb459c8ca718a9d4c">
+        <dex dex="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-gcm-8.4.0_02faaa23bd86c7d9128695ab44144adf630522e3\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\23.0.0\jars\libs\internal_impl-23.0.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="03d38bb042efe3e5ce27ba66b729a9523c36d8fe">
+        <dex dex="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.0.0_76c1c86b37272683a09951bffb6c1c6a54630848\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="3053c24527fbbe2636011cec4f7e1ab8c1e25943">
+        <dex dex="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_237f423d9877c6f74efb6e14716828182c424a1c\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="a0b5d60246cd9d4f3f2443611b3b4c25265840b5">
+        <dex dex="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-23.3.0_dd530f64c76d58ac1891e6241ece19290128b3a4\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="65d086ee9daaf87b5af62ad24471edafa433354c">
+        <dex dex="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-appindexing-8.4.0_1fee0c5b84b57bb62f6d9eb812d4f41af2804e00\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Guy\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.3.0\support-annotations-23.3.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="db7791d75a07fef9844d06236c1c59ba7bf6997c">
+        <dex dex="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.3.0_04c3118af621db27147ccd7791b2c94813a80818\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="c54246475c1bb64ac6857d1320364bfbfeda2c46">
+        <dex dex="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-fitness-8.4.0_fab4070815f00313a89c89beaee7a1fb5f96de0c\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-measurement\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="613298b7aa012f121ce542881c0a599ebd8078f2">
+        <dex dex="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-measurement-8.4.0_b7534d816951d8a2bab71841e40a0855db2ffc68\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="04de44f90606c77f3b28cf44861f306290505aac">
+        <dex dex="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-maps-8.4.0_604f7defa80f11f23bc1c036124386bc700740ec\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="a8412b654dab86d57bf90683367488211c8a81f1">
+        <dex dex="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-location-8.4.0_660996f194701aba05d2487abd815e8c514ebb89\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="1b8e03daaa43fb0a4cd57e378167c2fd70454c1e">
+        <dex dex="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.3.0_7e10324b9f359b609f40838df437ffbe1452dd48\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\23.0.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="d358b3dd49a7c67844622dcbc9cf4339e13952ce">
+        <dex dex="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-mediarouter-v7-23.0.0_f3201abde588290afdf5b17525777b5f3c11a530\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="551e78f21acf69ebfb489c0e79647824c838013e">
+        <dex dex="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-cast-8.4.0_24b5775113a95200603f741235f5f31c4038315c\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="08d34b2d135c1cc96ab506fd8bf6916d1e2f391a">
+        <dex dex="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-panorama-8.4.0_e71a9b12624b290c995b808163069d3158bab4cc\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="3a364cc6b698d1b3b2d284f64618daaa7fe77ddf">
+        <dex dex="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-games-8.4.0_35d602e20b360249943743b2ff8f4de7485efd47\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-vision\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="dfecc4d835cdabcdecf7e95f0d20a3ef1e9d8ef4">
+        <dex dex="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-vision-8.4.0_88539cec6fb6af3ba3a9284cba802eb879f55578\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="f2df436a8f02ce7e4d7d209671fc45f97c470f0e">
+        <dex dex="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-wallet-8.4.0_c14c24d7aa1bab1c7bb33b9c5755be5f5d7bb83c\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\libs\internal_impl-23.3.0.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
+        <dex dex="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.3.0_e5ded588f5ca6dce303c465f68a0c064b1926869\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="966e5771a5a2ebfb31bf00d7cd6cd2546d245517">
+        <dex dex="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-auth-8.4.0_778d8c421c1b6b9717722e5d1201f6bb96c8ee5c\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="1a78298e7724d5440d210bcb946b3493250d354d">
+        <dex dex="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-plus-8.4.0_9b94694f5af52b110ba0eb2aaf3e177e932e2344\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="b5e7892fb0708e792e0e933c4c0a0ca0ac7831fb">
+        <dex dex="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-ads-8.4.0_1c6eb9f4c78d70ba7ccd2169f5229f09664ce9ee\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="b82b8e847173c28efffcd291b2a0b1ae9ad17fa4">
+        <dex dex="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-identity-8.4.0_d7b4ddf58d0fc857ef45c2e7cf358a62a68a7b94\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
+        <dex dex="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-base-8.4.0_9ccc07803ea315de00dcc2ddd12062dac6041982\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
+        <dex dex="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-8.4.0_7a6987b64c07b318fb3870901efa70abecdaa363\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="ae5b61e710944d991c4d8ff58409384e921b6a14">
+        <dex dex="C:\Users\Guy\Documents\project3\restaurant-search\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_4d3ed1439b6c34b4e3493ed6da3b6a268d698243\classes.dex" />
+    </item>
+
+</items>
