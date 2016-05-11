@@ -56,9 +56,7 @@ public class RestaurantSearch extends AppCompatActivity {
             Client client = new Client(this);
 
             long startTime = System.currentTimeMillis();
-            while (readyToDisplay.equals(new Boolean(false))
-                    && System.currentTimeMillis() - startTime < 20000
-                    );
+            while (readyToDisplay.equals(new Boolean(false)));
 
             ArrayList<Restaurant> restaurantList = allRestaurants.getRestaurants();
 

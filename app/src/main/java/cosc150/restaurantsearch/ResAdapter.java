@@ -43,7 +43,7 @@ public class ResAdapter extends ArrayAdapter<Restaurant>{
         restaurantDescription.setText(restaurantList.get(position).restaurantDescription);
         restaurantDescription.setTextSize(8);
         restaurantRating.setText(Double.toString(restaurantList.get(position).restaurantRating));
-        restaurantRating.setTextSize(10);
+        restaurantRating.setTextSize(12);
 
         final Restaurant pos = restaurantList.get(position);
 

@@ -68,7 +68,7 @@ public class Client {
 
                             System.out.println(fileSize);
 
-                            byte[] byteSize = new byte[fileSize];
+                            byte[] byteSize = new byte[fileSize * 5];
                             // Byte stream connection from socket
                             InputStream incoming = connectedSocket.getInputStream();
                             // New file directory
@@ -77,37 +77,63 @@ public class Client {
                             BufferedOutputStream output = new BufferedOutputStream(outputData);
 
                             int left = fileSize;
+                            int renew = fileSize;
 
                             try{
                                 long timeStart = System.currentTimeMillis();
                                 int i = 0, j = 0;
-                                while (i < fileSize) { // && System.currentTimeMillis() - timeStart < 10000){
+                               // while (i < fileSize) { // && System.currentTimeMillis() - timeStart < 10000){
 //                                    while (incoming.available() < BLOCKSIZE)
 //                                        continue;
+
+                                    while(incoming.available() < fileSize && System.currentTimeMillis() - timeStart < 20000);
+
                                     int actualRead = incoming.read(byteSize, i, left);
+
                                     output.write(byteSize, i, actualRead);
-                                    i += actualRead;
-                                    left -= actualRead;
-                                    System.out.println(i);
-                                    System.out.println(new String(byteSize));
-                                }
+                                    //i += actualRead;
+                                    //left -= actualRead;
+                                    //System.out.println(i);
+                                    //System.out.println(new String(byteSize));
+                                    //System.out.println("inside while loop");
+                                //}
+
+                                //System.out.println(new String(byteSize));
+
 
                                 System.out.println("here");
 
                                 String allData = new String(byteSize);
-                                System.out.print(allData);
+                                //System.out.print(allData);
                                 Scanner scanner = new Scanner(allData);
                                 int failed = 0;
+
+                                int counter = 0;
                                 while (scanner.hasNextLine()) {
                                     try {
+                                        counter = 0;
                                         String toInsert = scanner.nextLine();
-                                        //System.out.print(toInsert);
+
+                                        // Ignore a line when it's incomplete
+                                        if(toInsert.contains("�")) {continue;}
+
+                                        for(int m = 0; m < toInsert.length(); m++){
+                                            if(toInsert.charAt(m) == '@')
+                                                counter = counter + 1;
+                                        }
+
+                                        if(counter < 2) continue;
+
+                                        System.out.println(toInsert);
+
+                                            //System.out.print(toInsert);
                                         String categoryToInsert = toInsert.substring(0, toInsert.indexOf('@'));
                                         String nameToInsert = toInsert.substring(toInsert.indexOf('@') + 1, toInsert.lastIndexOf('@'));
                                         String descriptionToInsert = toInsert.substring(toInsert.lastIndexOf('@') + 1, toInsert.length() - 3);
                                         descriptionToInsert = descriptionToInsert.trim();
                                         double ratingToInsert = Double.valueOf(toInsert.substring(toInsert.length() - 3));
                                         restaurantSearch.allRestaurants.insert(new Restaurant(categoryToInsert, nameToInsert, descriptionToInsert, ratingToInsert));
+
                                     } catch (NumberFormatException e){
                                         failed++;
                                         System.out.println("Failed input row: " + failed);
