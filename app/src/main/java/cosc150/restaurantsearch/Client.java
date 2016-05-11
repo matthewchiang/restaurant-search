@@ -65,10 +65,10 @@ public class Client {
                             // Parse message and begin recieving file.
                             message = message.substring(1);
                             int fileSize = Integer.parseInt(message.substring(0, message.indexOf('$')));
-                            String fileName = message.substring(message.lastIndexOf('$') + 1);
 
-                            int BLOCKSIZE = 1024;
-                            byte[] byteSize = new byte[BLOCKSIZE];
+                            System.out.println(fileSize);
+
+                            byte[] byteSize = new byte[fileSize];
                             // Byte stream connection from socket
                             InputStream incoming = connectedSocket.getInputStream();
                             // New file directory
@@ -76,23 +76,25 @@ public class Client {
                             // Stream to extract file from byte stream
                             BufferedOutputStream output = new BufferedOutputStream(outputData);
 
+                            int left = fileSize;
+
                             try{
-                                int i = BLOCKSIZE, j = 0;
-                                while (i < fileSize){
-                                    while (incoming.available() < BLOCKSIZE)
-                                        continue;
-                                    incoming.read(byteSize, 0, BLOCKSIZE);
-                                    output.write(byteSize, 0, BLOCKSIZE);
-                                    i += BLOCKSIZE;
-                                }
-                                i -= BLOCKSIZE;
-                                while (i + j < fileSize){
-                                    incoming.read(byteSize, 0, 1);
-                                    output.write(byteSize, 0, 1);
-                                    j++;
+                                long timeStart = System.currentTimeMillis();
+                                int i = 0, j = 0;
+                                while (i < fileSize) { // && System.currentTimeMillis() - timeStart < 10000){
+//                                    while (incoming.available() < BLOCKSIZE)
+//                                        continue;
+                                    int actualRead = incoming.read(byteSize, i, left);
+                                    output.write(byteSize, i, actualRead);
+                                    i += actualRead;
+                                    left -= actualRead;
+                                    System.out.println(i);
+                                    System.out.println(new String(byteSize));
                                 }
 
-                                String allData = outputData.toString();
+                                System.out.println("here");
+
+                                String allData = new String(byteSize);
                                 System.out.print(allData);
                                 Scanner scanner = new Scanner(allData);
                                 int failed = 0;
