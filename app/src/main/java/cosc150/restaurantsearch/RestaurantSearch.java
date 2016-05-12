@@ -19,29 +19,16 @@ import java.util.Timer;
 public class RestaurantSearch extends AppCompatActivity {
 
     boolean[] categoryBooleans;
-    ArrayList<String> categoriesToSearch = new ArrayList<String>();
-    BPlusTree allRestaurants = new BPlusTree(6);
+    ArrayList<String> categoriesToSearch = new ArrayList<String>(); //categories used for search in the server
+    BPlusTree allRestaurants = new BPlusTree(6); //data structure to hold all incoming results from the server
     Boolean readyToDisplay = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant_search);
-
-        /*
-        Button request = (Button) findViewById(R.id.request);
-        request.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick (View view){
-                Intent select = new Intent(view.getContext(), SelectedRestaurant.class);
-                select.putExtra("restaurant_name", "Chicoli");
-                select.putExtra("description", "We raise all our ingredients irresponsibly!");
-                select.putExtra("overall_rating", 1.5);
-                startActivityForResult(select, 0);
-            }
-        });
-        */
-
+        
+        //Importing boolean flags of catagory selection from the previous activity
         categoryBooleans = getIntent().getBooleanArrayExtra("selected");
         if (categoryBooleans[0]) categoriesToSearch.add("Aztec");
         if (categoryBooleans[1]) categoriesToSearch.add("Chinese");
@@ -59,45 +46,18 @@ public class RestaurantSearch extends AppCompatActivity {
             while (readyToDisplay.equals(new Boolean(false)));
 
             ArrayList<Restaurant> restaurantList = allRestaurants.getRestaurants();
-
+            
+            //Creating custom restaurant adapter for all search results
             ResAdapter myAdapter = new ResAdapter(
                     this,
                     R.layout.restaurantlayout,
                     restaurantList
             );
+            
+            //Applying the adapter to a ListView in the screen
             ListView listView = (ListView) findViewById(R.id.listView);
             listView.setAdapter(myAdapter);
 
-            /*
-            System.out.println("SIZE: " + restaurantList.size());
-
-            LinearLayout linearLayout1 = (LinearLayout) findViewById(R.id.linearLayout1);
-
-
-            for (Restaurant toAdd : restaurantList) {
-                String cat = toAdd.restaurantCategory;
-                final String name = toAdd.restaurantName;
-                final String descr = toAdd.restaurantDescription;
-                final double rat = toAdd.restaurantRating;
-
-                TextView text = new TextView(this);
-
-                text.setOnClickListener(new View.OnClickListener(){
-                    @Override
-                    public void onClick(View v){
-                        Intent select = new Intent(v.getContext(), SelectedRestaurant.class);
-                        select.putExtra("restaurant_name", name);
-                        select.putExtra("description", descr);
-                        select.putExtra("overall_rating",rat);
-                        startActivityForResult(select, 0);
-                    }
-                });
-
-                text.setText(Html.fromHtml("<sup>"+cat+"</sup>"+" "+ name +" "+ "<small>"+descr+"</small>" +" "+ "<bold>"+rat+"</bold>"));
-                text.setTextSize(20);
-                linearLayout1.addView(text);
-            }
-            */
         } catch (IOException e) {
             e.printStackTrace();
         }
