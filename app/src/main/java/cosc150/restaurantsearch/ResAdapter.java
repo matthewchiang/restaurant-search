@@ -27,8 +27,8 @@ public class ResAdapter extends ArrayAdapter<Restaurant>{
         this.resource = resource;
         this.restaurantList = restaurantList;
     }
-
-
+    
+    //Creating a custom row layout for each restaurant in the adapter
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View row = convertView;
@@ -47,6 +47,7 @@ public class ResAdapter extends ArrayAdapter<Restaurant>{
 
         final Restaurant pos = restaurantList.get(position);
 
+        //Allocating the corresponding icon beside result, according to its listed category
         switch (restaurantList.get(position).restaurantCategory.toLowerCase()){
             case "aztec":
                 restaurantImage.setImageResource(R.drawable.aztec);
@@ -73,7 +74,8 @@ public class ResAdapter extends ArrayAdapter<Restaurant>{
                 restaurantImage.setImageResource(R.drawable.mexican);
                 break;
         }
-
+        
+        //Creating an intent that sends the restaurant info to the next activity, SelectedRestaurant, when row is clicked
         row.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
