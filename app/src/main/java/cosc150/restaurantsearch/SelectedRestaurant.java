@@ -17,7 +17,7 @@ import android.widget.TextView;
 
 public class SelectedRestaurant extends AppCompatActivity {
 
-    final int reviewCount = 10;
+    final int reviewCount = 10; //fixed number of user reviews to create
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,8 @@ public class SelectedRestaurant extends AppCompatActivity {
         String importedName = "";
         String importedDescription = "";
         double importedRating = 0;
-
+        
+        //Unpacking the data passed from the previous activity
         Bundle extras = getIntent().getExtras();
         if (extras != null){
             importedName = extras.getString("restaurant_name");
@@ -44,8 +45,10 @@ public class SelectedRestaurant extends AppCompatActivity {
         RatingBar restRating = (RatingBar) findViewById(R.id.overallRating);
         restRating.setRating((float)importedRating);
 
+        //Generating user reviews for the restaurant, based on its overall rating
         Review[] restReviews = ReviewGenerator.createReviews(importedRating, reviewCount);
 
+        //Creating custom adapter for user reviews
         class reviewAdapter extends ArrayAdapter<Review> {
             private final Context context;
 
@@ -54,6 +57,7 @@ public class SelectedRestaurant extends AppCompatActivity {
                 this.context = context;
             }
 
+            //fitting the reviews into a custom review layout within the ListView component
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
                 LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -69,19 +73,15 @@ public class SelectedRestaurant extends AppCompatActivity {
             }
         }
 
+        //Applying custom review adapter to the ListView
         ListView lv = (ListView) findViewById(R.id.ListView);
         reviewAdapter adapter = new reviewAdapter(this, restReviews);
         lv.setAdapter(adapter);
     }
-
+    
+    //Intent created for next activity when 'Locate' button is clicked
     public void goToMap (View view) {
         Intent mapIntent = new Intent(this, MapsActivity.class);
         startActivity(mapIntent);
-    }
-
-    protected void goToUrl (String url) {
-        Uri uriUrl = Uri.parse(url);
-        Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
-        startActivity(launchBrowser);
     }
 }
