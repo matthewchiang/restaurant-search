@@ -30,11 +30,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         Random random = new Random();
+        //Generates random coordinates for each restaurant location
         Double latitude = (random.nextDouble() * 7.7) + 33.3;
         Double longitude = -(random.nextDouble() * 33.2) - 84.3;
 
         LatLng restaurantLocation = new LatLng(latitude, longitude);
-        mMap.addMarker(new MarkerOptions().position(restaurantLocation).title("Restaurant Location"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(restaurantLocation, new Float(12.0)));
+        mMap.addMarker(new MarkerOptions().position(restaurantLocation).title("Restaurant Location")); //setting a marker
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(restaurantLocation, new Float(12.0))); //setting default zoom
     }
 }
